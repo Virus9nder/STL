@@ -10,7 +10,7 @@ namespace ConsoleApp1
     {
         private static string check = "0123456789,.";
         public static Double First;
-        public static Double b;
+        public static Double Second;
         public static Double c;
         public static Double Correct(string x)
         {
@@ -35,22 +35,22 @@ namespace ConsoleApp1
         public static void Add()
         {
 
-            Calc.c= Calc.First + Calc.b;
+            Calc.c= Calc.First + Calc.Second;
         }
         public static void Sub()
         {
 
-            Calc.c = Calc.First - Calc.b;
+            Calc.c = Calc.First - Calc.Second;
         }
         public static void Div()
         {
 
-            Calc.c = Calc.First / Calc.b;
+            Calc.c = Calc.First / Calc.Second;
         }
         public static void Mull()
         {
 
-            Calc.c = Calc.First * Calc.b;
+            Calc.c = Calc.First * Calc.Second;
         }
     }
 
@@ -72,7 +72,7 @@ namespace ConsoleApp1
 
                 string B = Console.ReadLine();
 
-                Calc.b = Calc.Correct(B);
+                Calc.Second = Calc.Correct(B);
                 Console.WriteLine("Выберите операцию:\n1-Сложение\n2-Вычитание\n3-Деление\n4-Умножение");
                 int1= int.Parse(Console.ReadLine());
                 switch (int1)
