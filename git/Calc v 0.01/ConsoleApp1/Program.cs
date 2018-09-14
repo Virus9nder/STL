@@ -9,7 +9,7 @@ namespace ConsoleApp1
     public static class Calc
     {
         private static string check = "0123456789,.";
-        public static Double a;
+        public static Double First;
         public static Double b;
         public static Double c;
         public static Double Correct(string x)
@@ -35,22 +35,22 @@ namespace ConsoleApp1
         public static void Add()
         {
 
-            Calc.c= Calc.a+ Calc.b;
+            Calc.c= Calc.First + Calc.b;
         }
         public static void Sub()
         {
 
-            Calc.c = Calc.a - Calc.b;
+            Calc.c = Calc.First - Calc.b;
         }
         public static void Div()
         {
 
-            Calc.c = Calc.a / Calc.b;
+            Calc.c = Calc.First / Calc.b;
         }
         public static void Mull()
         {
 
-            Calc.c = Calc.a * Calc.b;
+            Calc.c = Calc.First * Calc.b;
         }
     }
 
@@ -67,7 +67,7 @@ namespace ConsoleApp1
 
                 string A = Console.ReadLine();
 
-                Calc.a = Calc.Correct(A);
+                Calc.First = Calc.Correct(A);
                 Console.WriteLine("Введите B:");
 
                 string B = Console.ReadLine();
