@@ -73,7 +73,7 @@ namespace ConsoleApp1
                 string B = Console.ReadLine();
 
                 Calc.b = Calc.Correct(B);
-                Console.WriteLine("Выберите операцию:\n1-Сложение\n2-Вычитание\n3-Деление\n4-Умножение");
+                Console.WriteLine("Выберите операцию:\n\t1-Сложение\n\t2-Вычитание\n\t3-Деление\n\t4-Умножение");
                 int1= int.Parse(Console.ReadLine());
                 switch (int1)
                 {
