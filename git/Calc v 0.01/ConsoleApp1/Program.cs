@@ -52,8 +52,6 @@ namespace ConsoleApp1
 
             Calc.c = Calc.a * Calc.b;
         }
-
-
     }
 
     class Program
@@ -67,14 +65,14 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("Введите A:");
 
-                string cc = Console.ReadLine();
+                string A = Console.ReadLine();
 
-                Calc.a = Calc.Do(cc);
+                Calc.a = Calc.Do(A);
                 Console.WriteLine("Введите B:");
 
-                cc = Console.ReadLine();
+                string B = Console.ReadLine();
 
-                Calc.b = Calc.Do(cc);
+                Calc.b = Calc.Do(B);
                 Console.WriteLine("Выберите операцию:\n1-Сложение\n2-Вычитание\n3-Деление\n4-Умножение");
                 int1= int.Parse(Console.ReadLine());
                 switch (int1)
