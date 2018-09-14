@@ -58,8 +58,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello from Virus:)");
-            
+           
             int int1 = 0;
             while (true)
             {
