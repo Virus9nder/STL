@@ -9,10 +9,10 @@ namespace ConsoleApp1
     public static class Calc
     {
         private static string check = "0123456789,.";
-        public static double a;
-        public static double b;
-        public static double c;
-        public static double Do(string x)
+        public static Double a;
+        public static Double b;
+        public static Double c;
+        public static Double Correct(string x)
         {
             int ui = 0;
             foreach (var item in x)
@@ -21,7 +21,7 @@ namespace ConsoleApp1
                 {
                     if (item == item2) ui = 1;
                 }
-                if (ui == 0) { Console.WriteLine("Введены некорректные данные, повторите ввод:"); x = Console.ReadLine(); return Calc.Do(x);  }
+                if (ui == 0) { Console.WriteLine("Введены некорректные данные, повторите ввод:"); x = Console.ReadLine(); return Calc.Correct(x);  }
             }
             string cc2 = "";
             foreach (var item in x)
@@ -30,7 +30,7 @@ namespace ConsoleApp1
                 else cc2 += item;
             }
 
-            return double.Parse(cc2);
+            return Double.Parse(cc2);
         }
         public static void Add()
         {
@@ -67,12 +67,12 @@ namespace ConsoleApp1
 
                 string A = Console.ReadLine();
 
-                Calc.a = Calc.Do(A);
+                Calc.a = Calc.Correct(A);
                 Console.WriteLine("Введите B:");
 
                 string B = Console.ReadLine();
 
-                Calc.b = Calc.Do(B);
+                Calc.b = Calc.Correct(B);
                 Console.WriteLine("Выберите операцию:\n1-Сложение\n2-Вычитание\n3-Деление\n4-Умножение");
                 int1= int.Parse(Console.ReadLine());
                 switch (int1)
