@@ -9,8 +9,8 @@ namespace ConsoleApp1
     public static class Calc
     {
         private static string check = "0123456789,.";
-        public static Double a;
-        public static Double b;
+        public static Double First;
+        public static Double Second;
         public static Double c;
         public static Double Correct(string x)
         {
@@ -35,22 +35,22 @@ namespace ConsoleApp1
         public static void Add()
         {
 
-            Calc.c= Calc.a+ Calc.b;
+            Calc.c= Calc.First + Calc.Second;
         }
         public static void Sub()
         {
 
-            Calc.c = Calc.a - Calc.b;
+            Calc.c = Calc.First - Calc.Second;
         }
         public static void Div()
         {
 
-            Calc.c = Calc.a / Calc.b;
+            Calc.c = Calc.First / Calc.Second;
         }
         public static void Mull()
         {
 
-            Calc.c = Calc.a * Calc.b;
+            Calc.c = Calc.First * Calc.Second;
         }
     }
 
@@ -67,13 +67,14 @@ namespace ConsoleApp1
 
                 string A = Console.ReadLine();
 
-                Calc.a = Calc.Correct(A);
+                Calc.First = Calc.Correct(A);
                 Console.WriteLine("Введите B:");
 
                 string B = Console.ReadLine();
 
-                Calc.b = Calc.Correct(B);
+               Calc.Second = Calc.Correct(B);
                 Console.WriteLine("Выберите операцию:\n\t1-Сложение\n\t2-Вычитание\n\t3-Деление\n\t4-Умножение");
+
                 int1= int.Parse(Console.ReadLine());
                 switch (int1)
                 {
