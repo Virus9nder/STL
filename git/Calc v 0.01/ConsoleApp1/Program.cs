@@ -32,22 +32,22 @@ namespace ConsoleApp1
 
             return double.Parse(cc2);
         }
-        public static void C1()
+        public static void Add()
         {
             
             F.c= F.a+F.b;
         }
-        public static void C2()
+        public static void Sub()
         {
 
             F.c = F.a - F.b;
         }
-        public static void C3()
+        public static void Div()
         {
 
             F.c = F.a / F.b;
         }
-        public static void C4()
+        public static void Mull()
         {
 
             F.c = F.a * F.b;
@@ -79,10 +79,10 @@ namespace ConsoleApp1
                 int1= int.Parse(Console.ReadLine());
                 switch (int1)
                 {
-                    case 1: F.C1(); break;
-                    case 2: F.C2(); break;
-                    case 3: F.C3(); break;
-                    case 4: F.C4(); break;
+                    case 1: F.Add(); break;
+                    case 2: F.Sub(); break;
+                    case 3: F.Div(); break;
+                    case 4: F.Mull(); break;
                     default: Console.WriteLine("Введите корректные данные"); break;
                 }
                 Console.WriteLine("Ответ: "+F.c);
