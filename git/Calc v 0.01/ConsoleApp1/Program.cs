@@ -11,7 +11,7 @@ namespace ConsoleApp1
         private static string check = "0123456789,.";
         public static Double First;
         public static Double Second;
-        public static Double c;
+        public static Double Result;
         public static Double Correct(string x)
         {
             int ui = 0;
@@ -35,22 +35,22 @@ namespace ConsoleApp1
         public static void Add()
         {
 
-            Calc.c= Calc.First + Calc.Second;
+            Calc.Result = Calc.First + Calc.Second;
         }
         public static void Sub()
         {
 
-            Calc.c = Calc.First - Calc.Second;
+            Calc.Result = Calc.First - Calc.Second;
         }
         public static void Div()
         {
 
-            Calc.c = Calc.First / Calc.Second;
+            Calc.Result = Calc.First / Calc.Second;
         }
         public static void Mull()
         {
 
-            Calc.c = Calc.First * Calc.Second;
+            Calc.Result = Calc.First * Calc.Second;
         }
     }
 
@@ -62,6 +62,7 @@ namespace ConsoleApp1
             int int1 = 0;
             while (true)
             {
+
                 Console.WriteLine("Введите A:");
 
                 string A = Console.ReadLine();
@@ -82,7 +83,7 @@ namespace ConsoleApp1
                     case 4: Calc.Mull(); break;
                     default: Console.WriteLine("Введите корректные данные"); break;
                 }
-                Console.WriteLine("Ответ: "+ Calc.c);
+                Console.WriteLine("Ответ: "+ Calc.Result);
             }
 
         }
