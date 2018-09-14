@@ -1,0 +1,7 @@
+#ignore visual studio files
+
+**/.vs
+**/Debug
+**/ConsoleApp1/bin
+**/ConsoleApp1/obj
+**/ConsoleApp1/Properties
