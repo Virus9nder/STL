@@ -19,7 +19,7 @@ namespace UnitTest.Tests
             double BC = 1;
             double CA = 1;
             
-            bool Check = Triangle.Check(AB,BC,CA);
+            bool Check = Figure.isTriangle(AB,BC,CA);
             
             Assert.AreEqual(true, Check);
             
@@ -32,7 +32,7 @@ namespace UnitTest.Tests
             double BC = 0;
             double CA = 1;
 
-            bool Check = Triangle.Check(AB, BC, CA);
+            bool Check = Figure.isTriangle(AB, BC, CA);
 
             Assert.AreEqual(false, Check);
 
@@ -45,7 +45,7 @@ namespace UnitTest.Tests
             double BC = 1;
             double CA = 1;
 
-            bool Check = Triangle.Check(AB, BC, CA);
+            bool Check = Figure.isTriangle(AB, BC, CA);
 
             Assert.AreEqual(false, Check);
 
@@ -58,7 +58,7 @@ namespace UnitTest.Tests
             double BC = 1;
             double CA = 1;
 
-            bool Check = Triangle.Check(AB, BC, CA);
+            bool Check = Figure.isTriangle(AB, BC, CA);
 
             Assert.AreEqual(true, Check);
 
@@ -71,7 +71,7 @@ namespace UnitTest.Tests
             double BC = 1;
             double CA = 1;
 
-            bool Check = Triangle.Check(AB, BC, CA);
+            bool Check = Figure.isTriangle(AB, BC, CA);
 
             Assert.AreEqual(false, Check);
 
@@ -84,7 +84,7 @@ namespace UnitTest.Tests
             double BC = 2*double.MinValue;
             double CA = double.MaxValue;
 
-            bool Check = Triangle.Check(AB, BC, CA);
+            bool Check = Figure.isTriangle(AB, BC, CA);
 
             Assert.AreEqual(false, Check);
 
@@ -97,7 +97,7 @@ namespace UnitTest.Tests
             double BC = double.MaxValue;
             double CA = double.MaxValue;
 
-            bool Check = Triangle.Check(AB, BC, CA);
+            bool Check = Figure.isTriangle(AB, BC, CA);
 
             Assert.AreEqual(true, Check);
 
@@ -110,7 +110,7 @@ namespace UnitTest.Tests
             double BC = double.MaxValue + double.MinValue;
             double CA = double.MaxValue + double.MinValue;
 
-            bool Check = Triangle.Check(AB, BC, CA);
+            bool Check = Figure.isTriangle(AB, BC, CA);
 
             Assert.AreEqual(false, Check);
 
@@ -123,7 +123,7 @@ namespace UnitTest.Tests
             double BC = 2;
             double CA = 3 + 0.00000001;
 
-            bool Check = Triangle.Check(AB, BC, CA);
+            bool Check = Figure.isTriangle(AB, BC, CA);
 
             Assert.AreEqual(true, Check);
 
@@ -136,7 +136,7 @@ namespace UnitTest.Tests
             double BC = 2;
             double CA = 3 + 0.00000001;
 
-            bool Check = Triangle.Check(AB, BC, CA);
+            bool Check = Figure.isTriangle(AB, BC, CA);
 
             Assert.AreEqual(false, Check);
 
