@@ -1,67 +1,66 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
+using NUnit.Framework;
 
-
-namespace UnitTest.Tests
+namespace UnitTest
 {
-    [TestClass()]
-    public class TriangleTests
+    [TestFixture]
+    class NUnitTests
     {
-        [TestMethod()]
+        [TestCase]
         public void GeneralTest()
         {
             Assert.IsTrue(Figure.isTriangle(1, 1, 1));
         }
 
-        [TestMethod()]
+        [TestCase]
         public void ZeroTest()
         {
             Assert.IsFalse(Figure.isTriangle(1, 0, 1));
         }
 
-        [TestMethod()]
+        [TestCase]
         public void MinusTest()
         {
             Assert.IsFalse(Figure.isTriangle(-1, 1, 1));
         }
 
-        [TestMethod()]
+        [TestCase]
         public void ConvertTest()
         {
             Assert.IsTrue(Figure.isTriangle(Convert.ToDouble("1,1"), 1, 1));
         }
 
-        [TestMethod()]
+        [TestCase]
         public void BoundaryTest()
         {
             Assert.IsFalse(Figure.isTriangle(0.00000000000000000000000000000000000000000000000001, 1, 1));
         }
 
-        [TestMethod()]
+        [TestCase]
         public void MaxMinValueTest()
         {
             Assert.IsFalse(Figure.isTriangle(double.MaxValue, 2 * double.MinValue, double.MaxValue));
         }
 
-        [TestMethod()]
+        [TestCase]
         public void MaxValueTest()
         {
             Assert.IsTrue(Figure.isTriangle(double.MaxValue, double.MaxValue, double.MaxValue));
         }
 
-        [TestMethod()]
+        [TestCase]
         public void UpperMaxValueTest()
         {
             Assert.IsFalse(Figure.isTriangle(double.MaxValue + double.MinValue, double.MaxValue + double.MinValue, double.MaxValue + double.MinValue));
         }
 
-        [TestMethod()]
+        [TestCase]
         public void BoundaryLowerTest()
         {
             Assert.IsTrue(Figure.isTriangle(1 + 0.000000011, 2, 3 + 0.00000001));
         }
 
-        [TestMethod()]
+        [TestCase]
         public void BoundaryUpperTest()
         {
             Assert.IsFalse(Figure.isTriangle(1, 2, 3 + 0.00000001));
