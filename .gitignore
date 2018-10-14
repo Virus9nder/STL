@@ -4,7 +4,8 @@
 **/packages
 **/TestResults
 **/Debug
-**/ConsoleApp1/bin
-**/ConsoleApp1/obj
-**/ConsoleApp1/Properties
+**/bin
+**/obj
+**/Properties
 *.config
+*.csproj
