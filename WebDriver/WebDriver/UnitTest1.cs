@@ -5,14 +5,13 @@ using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 
-
 namespace WebDriver
 {
     [TestClass]
     public class WebDriverTest
     {
         [TestMethod]
-        public void FirstTest()
+        public void FirsWebDrvertTest()
         {
             //RemoteWebDriver Driver = new ChromeDriver();
             //RemoteWebDriver Driver = new InternetExplorerDriver();
@@ -36,7 +35,6 @@ namespace WebDriver
             ArrivalCalendar.SendKeys("27/10");
 
             Confirm.Click();
-
         }
     }
 }
