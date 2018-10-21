@@ -4,7 +4,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
-
+using OpenQA.Selenium;
 namespace WebDriver
 {
     [TestClass]
@@ -35,6 +35,19 @@ namespace WebDriver
             ArrivalCalendar.SendKeys("27/10");
 
             Confirm.Click();
+        }
+
+        [TestMethod]
+        public void NewWebDriverTest()
+        {
+            IWebDriver Driver = new ChromeDriver();
+            Driver.Navigate().GoToUrl("http://www.vento.by/avia");
+            Driver.FindElement(By.Id("Departure_1_label")).SendKeys("Минск");
+           // Driver.FindElement(By.Id("Arrival_1_label")).SendKeys("Москва");
+            Driver.FindElement(By.Id("CalendarLink1")).SendKeys("26/10");
+            Driver.FindElement(By.Id("CalendarLinkReturn")).SendKeys("27/10");
+            Driver.FindElement(By.Id("searchBtn")).Click();
+            Driver.Quit();
         }
     }
 }
