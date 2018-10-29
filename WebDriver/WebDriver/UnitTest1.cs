@@ -1,14 +1,11 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.IE;
-using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 namespace WebDriver
 {
-
     class Virus
     {
         private readonly IWebDriver driver;
@@ -24,43 +21,36 @@ namespace WebDriver
         }
 
         [FindsBy(How = How.ClassName, Using = "city_1_user")]
-        public IWebElement City1 { get; set; }
+        public IWebElement CityFrom { get; set; }
 
         [FindsBy(How = How.ClassName, Using = "city_2_user")]
-        public IWebElement City2 { get; set; }
+        public IWebElement CityTo { get; set; }
 
         [FindsBy(How = How.ClassName, Using = "fir_date_mobile")]
-        public IWebElement Date1 { get; set; }
+        public IWebElement DateFrom { get; set; }
 
         [FindsBy(How = How.ClassName, Using = "sec_date_mobile")]
-        public IWebElement Date2 { get; set; }
+        public IWebElement DateTo { get; set; }
 
         [FindsBy(How = How.ClassName, Using = "search-form__button_search__mobile")]
-        public IWebElement But1 { get; set; }
+        public IWebElement ButtonSearch { get; set; }
 
         [FindsBy(How = How.ClassName, Using = "dialog-content")]
         public IWebElement Result { get; set; }
-
-
-
+        
         public void Navigate()
         {
             this.driver.Navigate().GoToUrl(this.url);
         }
 
-        public void EnterValues(string C1, string C2, string D1, string D2)
+        public void EnterValues(string CityFrom, string CityTo, string DateFrom, string DateTo)
         {
-            this.City1.SendKeys(C1 + Keys.Enter);
-            this.City2.SendKeys(C2 + Keys.Enter);
-            this.Date1.SendKeys(D1 + Keys.Enter);
-            this.Date2.SendKeys(D2 + Keys.Enter);
-            this.But1.Click();
-        }
-
-        public void DoTest(string result)
-        {
-            Assert.AreEqual(this.Result.Text, result);
-        }
+            this.CityFrom.SendKeys(CityFrom + Keys.Enter);
+            this.CityTo.SendKeys(CityTo + Keys.Enter);
+            this.DateFrom.SendKeys(DateFrom + Keys.Enter);
+            this.DateTo.SendKeys(DateTo + Keys.Enter);
+            this.ButtonSearch.Click();
+        }       
     }
 
     [TestClass]
@@ -88,7 +78,7 @@ namespace WebDriver
             Virus Vir = new Virus(this.Driver);
             Vir.Navigate();
             Vir.EnterValues("Минск", "Москва", "2018-11-11", "2018-11-10");
-            Vir.DoTest("Выбраны неверные даты");
+            Assert.AreEqual(Vir.Result.Text, "Выбраны неверные даты");
         }
     }
 
