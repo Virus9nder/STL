@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 
 namespace WebDriver
@@ -9,8 +8,7 @@ namespace WebDriver
     public class POTest
     {
         public IWebDriver Driver;
-        public WebDriverWait Wait;
-
+       
         [TestInitialize]
         public void SetupTest()
         {

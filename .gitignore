@@ -6,6 +6,5 @@
 **/Debug
 **/bin
 **/obj
-**/Properties
 *.config
 *.csproj
