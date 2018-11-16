@@ -33,7 +33,7 @@ namespace WebDriverATF.Pages
         [FindsBy(How = How.ClassName, Using = "dialog-content")]
         public IWebElement Result;
 
-        public void EnterValues(string CityFrom, string CityTo, string DateFrom, string DateTo)
+        public void NewMainData(string CityFrom, string CityTo, string DateFrom, string DateTo)
         {
             this.Driver.Navigate().GoToUrl(this.Url);
             this.CityFrom.SendKeys(CityFrom + Keys.Enter);

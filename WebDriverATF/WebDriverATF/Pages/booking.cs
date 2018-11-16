@@ -57,7 +57,7 @@ namespace WebDriverATF.Pages
         [FindsBy(How = How.Id, Using = "tooltipster-content")]
         public IWebElement Result;
         
-        public void EnterValues(string Surname, string Name, string BirthDate, string PassportCountry, string PassportNumber, string PassportDate, string Country, string Phone, string Email)
+        public void NewBookingData(string Surname, string Name, string BirthDate, string PassportCountry, string PassportNumber, string PassportDate, string Country, string Phone, string Email)
         {
             this.Driver.Navigate().GoToUrl(this.Url);
             this.BookingSite.Click();
@@ -71,6 +71,23 @@ namespace WebDriverATF.Pages
             this.Country.SendKeys(Country + Keys.Enter);
             this.Phone.SendKeys(Phone + Keys.Enter);
             this.Email.SendKeys(Email + Keys.Enter);
+            this.BookingAgree.Click();
+            this.BookingButton.Click();
+        }
+        public void NewBookingData(BookingData bookingData)
+        {
+            this.Driver.Navigate().GoToUrl(this.Url);
+            this.BookingSite.Click();
+            this.Surname.SendKeys(bookingData.Surname + Keys.Enter);
+            this.Name.SendKeys(bookingData.Name + Keys.Enter);
+            this.BirthDate.SendKeys(bookingData.BirthDate + Keys.Enter);
+            this.PassportCountry.SendKeys(bookingData.PassportCountry + Keys.Enter);
+            this.PassportNumber.SendKeys(bookingData.PassportNumber + Keys.Enter);
+            this.PassportDate.SendKeys(bookingData.PassportDate + Keys.Enter);
+            this.GenderBoy.Click();
+            this.Country.SendKeys(bookingData.Country + Keys.Enter);
+            this.Phone.SendKeys(bookingData.Phone + Keys.Enter);
+            this.Email.SendKeys(bookingData.Email + Keys.Enter);
             this.BookingAgree.Click();
             this.BookingButton.Click();
         }
