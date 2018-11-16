@@ -1,39 +1,39 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 
 namespace WebDriver
 {
-    [TestClass]
+    [TestFixture]
     public class POTest
     {
         public IWebDriver Driver;
        
-        [TestInitialize]
+        [SetUp]
         public void SetupTest()
         {
             this.Driver = new ChromeDriver();
         }
 
-        [TestCleanup]
+        [TearDown]
         public void TeardownTest()
         {
             this.Driver.Quit();
         }
 
-        [TestMethod]
+        [Test]
         public void UncorrectDates()
         {
             WebDriverClass WebDriver = new WebDriverClass(this.Driver);
-            WebDriver.EnterValues("Минск", "Москва", "2018-11-11", "2018-11-10");
-            Assert.AreEqual(WebDriver.Result, "Выбраны неверные даты");
+            WebDriver.NewBooking("Минск", "Москва", "2018-11-11", "2018-11-10");
+            Assert.AreEqual(WebDriver.ErrorMessage, "Выбраны неверные даты");
         }
     }
 
-    [TestClass]
+    [TestFixture]
     public class WebDriverTest
     {
-        [TestMethod]
+        [Test]
         public void LastWebDriverTest()
         {
             IWebDriver Driver = new ChromeDriver();

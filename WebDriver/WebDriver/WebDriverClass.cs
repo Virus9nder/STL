@@ -31,9 +31,9 @@ namespace WebDriver
         public IWebElement ButtonSearch;
 
         [FindsBy(How = How.ClassName, Using = "dialog-content")]
-        public IWebElement Result;
+        public IWebElement ErrorMessage;
 
-        public void EnterValues(string CityFrom, string CityTo, string DateFrom, string DateTo)
+        public void NewBooking(string CityFrom, string CityTo, string DateFrom, string DateTo)
         {
             this.Driver.Navigate().GoToUrl(this.Url);
             this.CityFrom.SendKeys(CityFrom + Keys.Enter);
