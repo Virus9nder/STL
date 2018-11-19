@@ -31,7 +31,7 @@ namespace WebDriverATF.Pages
         public IWebElement ButtonSearch;
 
         [FindsBy(How = How.ClassName, Using = "dialog-content")]
-        public IWebElement Result;
+        public IWebElement ErrorMessage;
 
         public void NewMainData(string CityFrom, string CityTo, string DateFrom, string DateTo)
         {

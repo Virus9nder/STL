@@ -55,7 +55,7 @@ namespace WebDriverATF.Pages
         public IWebElement BookingButton;
 
         [FindsBy(How = How.Id, Using = "tooltipster-content")]
-        public IWebElement Result;
+        public IWebElement ErrorMessage;
         
         public void NewBookingData(string Surname, string Name, string BirthDate, string PassportCountry, string PassportNumber, string PassportDate, string Country, string Phone, string Email)
         {

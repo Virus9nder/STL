@@ -1,18 +1,18 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium;
 
 namespace WebDriverATF.Test
 {
     [TestFixture]
-    public class CorrectNameTest
+    public class Test
     {
         public IWebDriver Driver;
 
         [SetUp]
         public void SetupTest()
         {
-            this.Driver = new ChromeDriver();
+            this.Driver = new FirefoxDriver();
         }
 
         [TearDown]
@@ -22,7 +22,7 @@ namespace WebDriverATF.Test
         }
 
         [Test]
-        public void UncorrectNameTest()
+        public void EmptyNameTest()
         {
             Pages.Main MainPage = new Pages.Main(this.Driver);
             MainPage.NewMainData("Минск", "Москва", "2018-12-11", "2018-12-12");
@@ -38,7 +38,7 @@ namespace WebDriverATF.Test
             bookingData.Phone = "12341234567";
             bookingData.Email = "virus@mail.ru";
             BookingPage.NewBookingData(bookingData); //BookingPage.NewBookingData("", "", "10-10-1990", "ггггггггг", "122345678", "10-10-2020", "ггггггггг", "12341234567", "virus@mail.ru");
-            Assert.AreEqual(BookingPage.Result, "Вам необходимо ввести фамилию латинскими буквами.");
+            Assert.AreEqual(BookingPage.ErrorMessage, "Вам необходимо ввести фамилию латинскими буквами.");
         }
     }
 }
