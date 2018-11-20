@@ -7,38 +7,31 @@ namespace WebDriverATF.Test
     [TestFixture]
     public class Test
     {
-        public IWebDriver Driver;
+        public IWebDriver driver;
 
         [SetUp]
         public void SetupTest()
         {
-            this.Driver = new FirefoxDriver();
+            this.driver = new FirefoxDriver();
         }
 
         [TearDown]
         public void TeardownTest()
         {
-            this.Driver.Quit();
+            this.driver.Quit();
         }
 
         [Test]
         public void EmptyNameTest()
         {
-            Pages.Main MainPage = new Pages.Main(this.Driver);
-            MainPage.NewMainData("Минск", "Москва", "2018-12-11", "2018-12-12");
-            Pages.Booking BookingPage = new Pages.Booking(this.Driver);
+            Pages.MainPage mainPage = new Pages.MainPage(this.driver);
+            mainPage.NewMainData("Минск", "Москва", "2018-12-11", "2018-12-12");
+            Pages.BookingPage BookingPage = new Pages.BookingPage(this.driver);
             BookingData bookingData = new BookingData();
-            bookingData.Surname = "";
-            bookingData.Name = "";
-            bookingData.BirthDate = "10-10-1990";
-            bookingData.PassportCountry = "ггггггггг";
-            bookingData.PassportNumber = "122345678";
-            bookingData.PassportDate = "10-10-2020";
-            bookingData.Country = "ггггггггг";
-            bookingData.Phone = "12341234567";
-            bookingData.Email = "virus@mail.ru";
+            bookingData.surname = "";
+            bookingData.name = "";
             BookingPage.NewBookingData(bookingData); //BookingPage.NewBookingData("", "", "10-10-1990", "ггггггггг", "122345678", "10-10-2020", "ггггггггг", "12341234567", "virus@mail.ru");
-            Assert.AreEqual(BookingPage.ErrorMessage, "Вам необходимо ввести фамилию латинскими буквами.");
+            Assert.AreEqual(BookingPage.GetErrorMessage(), "Вам необходимо ввести фамилию латинскими буквами.");
         }
     }
 }

@@ -1,46 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WebDriverATF
+﻿namespace WebDriverATF
 {
     class BookingData
     {
-        public string Surname;
-        public string Name;
-        public string BirthDate;
-        public string PassportCountry;
-        public string PassportNumber;
-        public string PassportDate;
-        public string Country;
-        public string Phone;
-        public string Email;
+        public string surname;
+        public string name;
+        public string birthDate;
+        public string passportCountry;
+        public string passportNumber;
+        public string passportDate;
+        public string country;
+        public string phone;
+        public string email;
 
         public BookingData()
         {
-            this.Surname="";
-            this.Name = "";
-            this.BirthDate = "";
-            this.PassportCountry = "";
-            this.PassportNumber = "";
-            this.PassportDate = "";
-            this.Country = "";
-            this.Phone = "";
-            this.Email = "";
+            surname = "Virus";
+            name = "Virus";
+            birthDate = "10-10-1990";
+            passportCountry = "ггггггггг";
+            passportNumber = "122345678";
+            passportDate = "10-10-2020";
+            country = "ггггггггг";
+            phone = "12341234567";
+            email = "virus@mail.ru";
         }
+
         public BookingData(string Surname, string Name, string BirthDate, string PassportCountry, string PassportNumber, string PassportDate, string Country, string Phone, string Email)
         {
-            this.Surname = Surname;
-            this.Name = Name;
-            this.BirthDate = BirthDate;
-            this.PassportCountry = PassportCountry;
-            this.PassportNumber = PassportNumber;
-            this.PassportDate = PassportDate;
-            this.Country = Country;
-            this.Phone = Phone;
-            this.Email = Email;
+            surname = Surname;
+            name = Name;
+            birthDate = BirthDate;
+            passportCountry = PassportCountry;
+            passportNumber = PassportNumber;
+            passportDate = PassportDate;
+            country = Country;
+            phone = Phone;
+            email = Email;
         }
     }
 }
