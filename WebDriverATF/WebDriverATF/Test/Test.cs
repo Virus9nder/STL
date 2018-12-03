@@ -25,7 +25,7 @@ namespace WebDriverATF.Test
         public void EmptyNameTest()
         {
             Pages.MainPage mainPage = new Pages.MainPage(this.driver);
-            mainPage.NewMainData("Минск", "Москва", "2018-12-11", "2018-12-12");
+            mainPage.NewMainData("Минск", "Москва", "2018-12-11", "2018-12-12",0);
             Pages.BookingPage BookingPage = new Pages.BookingPage(this.driver);
             BookingData bookingData = new BookingData();
             bookingData.surname = "";
