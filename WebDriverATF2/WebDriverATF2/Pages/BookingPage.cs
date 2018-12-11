@@ -59,26 +59,36 @@ namespace WebDriverATF2.Pages
             PageFactory.InitElements(Browser, this);
         }
 
-        public IWebElement GetErrorMessage()
+        public string GetErrorMessage()
         {
-            return errorMessage;
+            return errorMessage.GetAttribute("content");
         }
-                
-        public void NewBookingData(BookingData bookingData)
+       
+        public void SetPersonData(string Surname, string Name, string BirthDate)
         {
             wait.Until(ExpectedConditions.ElementToBeClickable(bookingSite));
             bookingSite.Click();
             wait.Until(ExpectedConditions.ElementToBeClickable(surname));
-            surname.SendKeys(bookingData.surname + Keys.Enter);
-            name.SendKeys(bookingData.name + Keys.Enter);
-            birthDate.SendKeys(bookingData.birthDate + Keys.Enter);
-            passportCountry.SendKeys(bookingData.passportCountry + Keys.Enter);
-            passportNumber.SendKeys(bookingData.passportNumber + Keys.Enter);
-            passportDate.SendKeys(bookingData.passportDate + Keys.Enter);
+            surname.SendKeys(Surname + Keys.Enter);
+            name.SendKeys(Name + Keys.Enter);
+            birthDate.SendKeys(BirthDate + Keys.Enter);
             genderBoy.Click();
-            country.SendKeys(bookingData.country + Keys.Enter);
-            phone.SendKeys(bookingData.phone + Keys.Enter);
-            email.SendKeys(bookingData.email + Keys.Enter);
+        }
+
+        public void SetPassportData( string PassportCountry, string PassportNumber, string PassportDate)
+        {
+            
+            passportCountry.SendKeys(PassportCountry + Keys.Enter);
+            passportNumber.SendKeys(PassportNumber + Keys.Enter);
+            passportDate.SendKeys(PassportDate + Keys.Enter);
+
+        }
+
+        public void SetCommunicationData(string Country, string Phone, string Email)
+        {
+            country.SendKeys(Country + Keys.Enter);
+            phone.SendKeys(Phone + Keys.Enter);
+            email.SendKeys(Email + Keys.Enter);
             bookingAgree.Click();
             bookingButton.Click();
         }
