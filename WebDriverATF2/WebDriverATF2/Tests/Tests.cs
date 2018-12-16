@@ -29,7 +29,7 @@ namespace WebDriverATF2.Test
             steps.SetPersonData("", "Virus", "10-10-1990");
             steps.SetPassportData("ггггггггг", "122345678", "10-10-2020");
             steps.SetCommunicationData("ггггггггг", "12341234567", "virus@mail.ru");
-            Assert.AreEqual(steps.GetBookingPageError(), "Вам необходимо ввести фамилию латинскими буквами.");
+            Assert.AreEqual(steps.GetBookingPageError(), "Введите фамилию (латинскими буквами)");
         }
 
         [Test]
@@ -43,8 +43,7 @@ namespace WebDriverATF2.Test
         [Test]
         public void UncorrectDateTest()
         {
-            steps.SetMainData("Минск", "Москва", "2018-12-11", "2018-12-10", 0);
-           
+            steps.SetMainData("Минск", "Москва", "2019-01-11", "2019-01-10", 0);
             Assert.AreEqual(steps.GetMainPageError(), "Выбраны неверные даты");
         }
 
@@ -63,7 +62,7 @@ namespace WebDriverATF2.Test
             steps.SetPersonData("123", "456", "10-10-1990");
             steps.SetPassportData("ггггггггг", "122345678", "10-10-2020");
             steps.SetCommunicationData("ггггггггг", "12341234567", "virus@mail.ru");
-            Assert.AreEqual(steps.GetBookingPageError(), "Вам необходимо ввести фамилию латинскими буквами.");
+            Assert.AreEqual(steps.GetBookingPageError(), "Введите фамилию (латинскими буквами)");
         }
 
         [Test]
@@ -73,7 +72,7 @@ namespace WebDriverATF2.Test
             steps.SetPersonData("Virus", "Virus", "10-10-2011");
             steps.SetPassportData("ггггггггг", "122345678", "10-10-2020");
             steps.SetCommunicationData("ггггггггг", "12341234567", "virus@mail.ru");
-            Assert.AreEqual(steps.GetBookingPageError(), "Вам необходимо ввести фамилию латинскими буквами.");
+            Assert.AreEqual(steps.GetBookingPageError(), "Взрослому пассажиру должно быть старше 12 лет (включительно)");
         }
 
         [Test]
@@ -83,9 +82,9 @@ namespace WebDriverATF2.Test
             steps.SetPersonData("Virus", "Virus", "10-10-2018");
             steps.SetPassportData("ггггггггг", "122345678", "10-10-2020");
             steps.SetCommunicationData("ггггггггг", "12341234567", "virus@mail.ru");
-            Assert.AreEqual(steps.GetBookingPageError(), "На дату вылета срок документа истек.");
+            Assert.AreEqual(steps.GetBookingPageError(), "Взрослому пассажиру должно быть старше 12 лет (включительно)");
         }
-
+        
         [Test]
         public void OldManTest()
         {
@@ -93,7 +92,7 @@ namespace WebDriverATF2.Test
             steps.SetPersonData("Virus", "Virus", "10-10-1868");
             steps.SetPassportData("ггггггггг", "122345678", "10-10-2020");
             steps.SetCommunicationData("ггггггггг", "12341234567", "virus@mail.ru");
-            Assert.AreEqual(steps.GetBookingPageError(), "Вам необходимо ввести фамилию латинскими буквами.");
+            Assert.AreEqual(steps.GetBookingPageError(), "Введите корректную дату рождения");
         }
  
          [Test]

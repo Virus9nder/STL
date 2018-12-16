@@ -16,7 +16,7 @@ namespace WebDriverATF2.Pages
         [FindsBy(How = How.ClassName, Using = "book_surname")]
         private IWebElement surname;
 
-        [FindsBy(How = How.ClassName, Using = "book_surname")]
+        [FindsBy(How = How.ClassName, Using = "book_name")]
         private IWebElement name;
 
         [FindsBy(How = How.ClassName, Using = "book_birth_date")]
@@ -31,8 +31,8 @@ namespace WebDriverATF2.Pages
         [FindsBy(How = How.ClassName, Using = "book_doc_exp_date")]
         private IWebElement passportDate;
 
-        [FindsBy(How = How.ClassName, Using = "boy")]
-        private IWebElement genderBoy;
+        [FindsBy(How = How.XPath, Using = "//*[@id='booking_form']/div[1]/div[3]/div[3]/label[2]")]
+        private IWebElement gender;
 
         [FindsBy(How = How.Id, Using = "country")]
         private IWebElement country;
@@ -43,13 +43,13 @@ namespace WebDriverATF2.Pages
         [FindsBy(How = How.ClassName, Using = "book_email")]
         private IWebElement email;
 
-        [FindsBy(How = How.Id, Using = "al1")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='booking_form']/div[8]/div[1]/label")]
         private IWebElement bookingAgree;
 
-        [FindsBy(How = How.Id, Using = "booking_button")]
+        [FindsBy(How = How.ClassName, Using = "btn-action-large")]
         private IWebElement bookingButton;
 
-        [FindsBy(How = How.Id, Using = "tooltipster-content")]
+        [FindsBy(How = How.XPath, Using = "/html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div/div/div[3]")]
         private IWebElement errorMessage;
 
         public BookingPage(IWebDriver Browser)
@@ -61,7 +61,7 @@ namespace WebDriverATF2.Pages
 
         public string GetErrorMessage()
         {
-            return errorMessage.GetAttribute("content");
+            return errorMessage.Text;
         }
        
         public void SetPersonData(string Surname, string Name, string BirthDate)
@@ -72,7 +72,7 @@ namespace WebDriverATF2.Pages
             surname.SendKeys(Surname + Keys.Enter);
             name.SendKeys(Name + Keys.Enter);
             birthDate.SendKeys(BirthDate + Keys.Enter);
-            genderBoy.Click();
+            gender.Click();
         }
 
         public void SetPassportData( string PassportCountry, string PassportNumber, string PassportDate)

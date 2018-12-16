@@ -49,7 +49,7 @@ namespace WebDriverATF2.Pages
         
         public string GetErrorMessage()
         {
-            return errorMessage.GetAttribute("content");
+            return errorMessage.Text;
         }
 
         public string GetBabyCount()
@@ -59,7 +59,7 @@ namespace WebDriverATF2.Pages
 
         private void SetBabyCount()
         {
-            BabyCount= babyCount.GetAttribute("content");
+            BabyCount= babyCount.Text;
         }
 
         public void NewMainData(string CityFrom, string CityTo, string DateFrom, string DateTo, int BabyCount)
