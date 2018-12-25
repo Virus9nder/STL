@@ -61,6 +61,7 @@ namespace WebDriverATF2.Pages
 
         public string GetErrorMessage()
         {
+            wait.Until(ExpectedConditions.ElementToBeClickable(errorMessage));
             return errorMessage.Text;
         }
        
