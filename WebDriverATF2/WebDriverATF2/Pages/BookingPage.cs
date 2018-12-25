@@ -77,11 +77,9 @@ namespace WebDriverATF2.Pages
 
         public void SetPassportData( string PassportCountry, string PassportNumber, string PassportDate)
         {
-            
             passportCountry.SendKeys(PassportCountry + Keys.Enter);
             passportNumber.SendKeys(PassportNumber + Keys.Enter);
             passportDate.SendKeys(PassportDate + Keys.Enter);
-
         }
 
         public void SetCommunicationData(string Country, string Phone, string Email)

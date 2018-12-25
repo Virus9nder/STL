@@ -36,7 +36,6 @@ namespace WebDriverATF2.Test
         public void EmptyCityToTest()
         {
             steps.SetMainData("Минск", "", "2018-12-11", "2018-12-12", 0);
-           
             Assert.AreEqual(steps.GetMainPageError(), "Не выбран аэропорт отправления/прибытия или введен некорректно.");
         }
 
@@ -51,7 +50,6 @@ namespace WebDriverATF2.Test
         public void RoundTheWorldTest()
         {
             steps.SetMainData("Минск", "Минск", "2018-12-11", "2018-12-12", 0);
-            
             Assert.AreEqual(steps.GetMainPageError(), "Пункты отправления/прибытия должны быть разными");
         }
 

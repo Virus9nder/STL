@@ -22,7 +22,6 @@ namespace WebDriverATF2.Steps
         {
             mainPage = new Pages.MainPage(this.driver);
             mainPage.NewMainData(CityFrom, CityTo, DateFrom, DateTo, BabyCount);
-           
         }
        
         public void SetPersonData(string Surname, string Name, string BirthDate)

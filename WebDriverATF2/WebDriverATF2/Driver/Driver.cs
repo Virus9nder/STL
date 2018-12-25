@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+
 namespace WebDriverATF2.Driver
 {
     class Driver
@@ -13,7 +14,6 @@ namespace WebDriverATF2.Driver
             {
                 driver = new OpenQA.Selenium.Chrome.ChromeDriver();
                 driver.Manage().Window.Maximize();
-
             }
             return driver;
         }
