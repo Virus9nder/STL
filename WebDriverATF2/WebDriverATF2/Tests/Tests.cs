@@ -7,7 +7,6 @@ namespace WebDriverATF2.Test
     [TestFixture]
     public class Test
     {
-        IWebDriver driver;
         private Steps.Steps steps = new Steps.Steps();
         
         [SetUp]
@@ -25,7 +24,7 @@ namespace WebDriverATF2.Test
         [Test]
         public void EmptyNameTest()
         {
-            steps.SetMainData("Минск", "Москва", "2018-12-11", "2018-12-12", 0);
+            steps.SetMainData("Минск", "Москва", "2019-01-12", "2019-01-13", 0);
             steps.SetPersonData("", "Virus", "10-10-1990");
             steps.SetPassportData("ггггггггг", "122345678", "10-10-2020");
             steps.SetCommunicationData("ггггггггг", "12341234567", "virus@mail.ru");
@@ -35,7 +34,7 @@ namespace WebDriverATF2.Test
         [Test]
         public void EmptyCityToTest()
         {
-            steps.SetMainData("Минск", "", "2018-12-11", "2018-12-12", 0);
+            steps.SetMainData("Минск", "", "2019-01-12", "2019-01-13", 0);
             Assert.AreEqual(steps.GetMainPageError(), "Не выбран аэропорт отправления/прибытия или введен некорректно.");
         }
 
@@ -49,14 +48,14 @@ namespace WebDriverATF2.Test
         [Test]
         public void RoundTheWorldTest()
         {
-            steps.SetMainData("Минск", "Минск", "2018-12-11", "2018-12-12", 0);
+            steps.SetMainData("Минск", "Минск", "2019-01-12", "2019-01-13", 0);
             Assert.AreEqual(steps.GetMainPageError(), "Пункты отправления/прибытия должны быть разными");
         }
 
         [Test]
         public void UncorrectNameTest()
         {
-            steps.SetMainData("Минск", "Москва", "2018-12-11", "2018-12-12", 0);
+            steps.SetMainData("Минск", "Москва", "2019-01-12", "2019-01-13", 0);
             steps.SetPersonData("123", "456", "10-10-1990");
             steps.SetPassportData("ггггггггг", "122345678", "10-10-2020");
             steps.SetCommunicationData("ггггггггг", "12341234567", "virus@mail.ru");
@@ -66,7 +65,7 @@ namespace WebDriverATF2.Test
         [Test]
         public void YoungManTest()
         {
-            steps.SetMainData("Минск", "Москва", "2018-12-11", "2018-12-12", 0);
+            steps.SetMainData("Минск", "Москва", "2019-01-12", "2019-01-13", 0);
             steps.SetPersonData("Virus", "Virus", "10-10-2011");
             steps.SetPassportData("ггггггггг", "122345678", "10-10-2020");
             steps.SetCommunicationData("ггггггггг", "12341234567", "virus@mail.ru");
@@ -76,7 +75,7 @@ namespace WebDriverATF2.Test
         [Test]
         public void ExpiredPassportTest()
         {
-            steps.SetMainData("Минск", "Москва", "2018-12-11", "2018-12-12", 0);
+            steps.SetMainData("Минск", "Москва", "2019-01-12", "2019-01-13", 0);
             steps.SetPersonData("Virus", "Virus", "10-10-2018");
             steps.SetPassportData("ггггггггг", "122345678", "10-10-2020");
             steps.SetCommunicationData("ггггггггг", "12341234567", "virus@mail.ru");
@@ -86,7 +85,7 @@ namespace WebDriverATF2.Test
         [Test]
         public void OldManTest()
         {
-            steps.SetMainData("Минск", "Москва", "2018-12-11", "2018-12-12", 0);
+            steps.SetMainData("Минск", "Москва", "2019-01-12", "2019-01-13", 0);
             steps.SetPersonData("Virus", "Virus", "10-10-1868");
             steps.SetPassportData("ггггггггг", "122345678", "10-10-2020");
             steps.SetCommunicationData("ггггггггг", "12341234567", "virus@mail.ru");
@@ -96,7 +95,7 @@ namespace WebDriverATF2.Test
          [Test]
         public void UncorrectPassportDateTest()
         {
-            steps.SetMainData("Минск", "Москва", "2018-12-11", "2018-12-12", 0);
+            steps.SetMainData("Минск", "Москва", "2019-01-12", "2019-01-13", 0);
             steps.SetPersonData("Virus", "Virus", "10-10-1990");
             steps.SetPassportData("ггггггггг", "122345678", "10-10-1868");
             steps.SetCommunicationData("ггггггггг", "12341234567", "virus@mail.ru");
@@ -106,7 +105,7 @@ namespace WebDriverATF2.Test
         [Test]
         public void ManyBabiesTest()
         {
-            steps.SetMainData("Минск", "Москва", "2018-12-11", "2018-12-12", 5);
+            steps.SetMainData("Минск", "Москва", "2019-01-12", "2019-01-13", 5);
             Assert.AreEqual(steps.GetBabyCount(), "1");
         }
     }

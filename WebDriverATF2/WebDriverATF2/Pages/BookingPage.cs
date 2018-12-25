@@ -52,11 +52,11 @@ namespace WebDriverATF2.Pages
         [FindsBy(How = How.XPath, Using = "/html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div/div/div[3]")]
         private IWebElement errorMessage;
 
-        public BookingPage(IWebDriver Browser)
+        public BookingPage(IWebDriver Driver, WebDriverWait Wait)
         {
-            this.driver = Browser;
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
-            PageFactory.InitElements(Browser, this);
+            driver = Driver;
+            wait = Wait;
+            PageFactory.InitElements(Driver, this);
         }
 
         public string GetErrorMessage()
@@ -88,6 +88,7 @@ namespace WebDriverATF2.Pages
             country.SendKeys(Country + Keys.Enter);
             phone.SendKeys(Phone + Keys.Enter);
             email.SendKeys(Email + Keys.Enter);
+            wait.Until(ExpectedConditions.ElementToBeClickable(bookingAgree));
             bookingAgree.Click();
             bookingButton.Click();
         }

@@ -39,12 +39,11 @@ namespace WebDriverATF2.Pages
         [FindsBy(How = How.XPath, Using = "//*[@id='win2']/div/div[2]/div[2]")]
         private IWebElement errorMessage;
 
-        public MainPage(IWebDriver Browser)
+        public MainPage(IWebDriver Driver, WebDriverWait Wait)
         {
-            this.driver = Browser;
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
-            this.driver.Manage().Window.Size = new System.Drawing.Size(driver.Manage().Window.Size.Width / 2, driver.Manage().Window.Size.Height);
-            PageFactory.InitElements(Browser, this);
+            this.driver = Driver;
+            wait = Wait;
+            PageFactory.InitElements(Driver, this);
         }
         
         public string GetErrorMessage()

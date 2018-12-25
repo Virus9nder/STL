@@ -1,16 +1,20 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace WebDriverATF2.Steps
 {
     class Steps
     {
         IWebDriver driver;
+        WebDriverWait wait;
         Pages.MainPage mainPage;
         Pages.BookingPage bookingPage;
 
         public void InitBrowser()
         {
             driver = Driver.Driver.GetInstance();
+            wait = Driver.Driver.GetWait();
         }
 
         public void CloseBrowser()
@@ -20,13 +24,13 @@ namespace WebDriverATF2.Steps
 
         public void SetMainData(string CityFrom, string CityTo, string DateFrom, string DateTo, int BabyCount)
         {
-            mainPage = new Pages.MainPage(this.driver);
+            mainPage = new Pages.MainPage(this.driver,this.wait);
             mainPage.NewMainData(CityFrom, CityTo, DateFrom, DateTo, BabyCount);
         }
        
         public void SetPersonData(string Surname, string Name, string BirthDate)
         {
-            bookingPage = new Pages.BookingPage(this.driver);
+            bookingPage = new Pages.BookingPage(this.driver, this.wait);
             bookingPage.SetPersonData(Surname, Name, BirthDate);
         }
 
