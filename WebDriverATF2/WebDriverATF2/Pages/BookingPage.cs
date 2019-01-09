@@ -43,7 +43,7 @@ namespace WebDriverATF2.Pages
         [FindsBy(How = How.ClassName, Using = "book_email")]
         private IWebElement email;
 
-        [FindsBy(How = How.XPath, Using = "//*[@id='booking_form']/div[5]/div[1]/label")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='booking_form']/div[8]/div[1]/label")]
         private IWebElement bookingAgree;
 
         [FindsBy(How = How.ClassName, Using = "btn-action-large")]
@@ -92,6 +92,6 @@ namespace WebDriverATF2.Pages
             bookingAgree.Click();
             bookingButton.Click();
         }
-    }//*[@id="booking_form"]/div[5]/div[1]/label
+    }
 }
 
